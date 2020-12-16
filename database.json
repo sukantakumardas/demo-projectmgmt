@@ -1,0 +1,142 @@
+{
+  "projects": [
+    {
+      "projectName": "Survey-udyapur",
+      "startDate": "2020-12-10",
+      "timeLine": 90,
+      "cost": 500000,
+      "geo": "Region 1 (Ajmer,Udyapur-Jaipur)",
+      "projIncharge": "Samir Gupta",
+      "projInchargeEmail": "Samir@abc.com",
+      "auditIncharge": "sukanta das",
+      "auditInchargeEmail": "sukantadas@rxz.com",
+      "status": "draft",
+      "id": 1
+    },
+    {
+      "projectName": "Survey-Agra",
+      "startDate": "2020-12-10",
+      "timeLine": 90,
+      "cost": 500000,
+      "geo": "Region 2 (Rest)",
+      "projIncharge": "Rakesh Arora",
+      "projInchargeEmail": "rakeshA@abc.com",
+      "auditIncharge": "Ravi Mourya",
+      "auditInchargeEmail": "raviM@audit.com",
+      "status": "In progress",
+      "id": 2
+    },
+    {
+      "projectName": "Survey-Ajmer",
+      "startDate": "2020-12-10",
+      "timeLine": 90,
+      "cost": 500000,
+      "geo": "Region 1 (Ajmer,Udyapur-Jaipur)",
+      "projIncharge": "Samir Gupta",
+      "projInchargeEmail": "Samir@abc.com",
+      "auditIncharge": "sukanta das",
+      "auditInchargeEmail": "sukantadas@rxz.com",
+      "status": "Completed",
+      "id": 3
+    },
+    {
+      "projectName": "Demo project",
+      "startDate": "2020-12-09",
+      "timeLine": "11",
+      "cost": "100000",
+      "geo": "Region 1 (Ajmer,Udyapur-Jaipur)",
+      "projIncharge": "sukanta",
+      "projInchargeEmail": "sukantakumar.das@gmail.com",
+      "auditIncharge": "gouri",
+      "auditInchargeEmail": "sukantakumar.das@gmail.com",
+      "status": "draft",
+      "id": 4
+    },
+    {
+      "projectName": "test",
+      "startDate": "2020-12-09",
+      "timeLine": "120",
+      "cost": "100000",
+      "geo": "Region 2 (Rest)",
+      "projIncharge": "SKD",
+      "projInchargeEmail": "SKD@b.com",
+      "auditIncharge": "JD",
+      "auditInchargeEmail": "JD@abc.com",
+      "status": "draft",
+      "createdBy": null,
+      "id": 5
+    },
+    {
+      "projectName": "ABC",
+      "startDate": "2020-12-10",
+      "timeLine": "100",
+      "cost": "80000",
+      "geo": "Region 2 (Rest)",
+      "projIncharge": "sukanta",
+      "projInchargeEmail": "abc@qw.com",
+      "auditIncharge": "SKD",
+      "auditInchargeEmail": "gouri@ps.com",
+      "status": "draft",
+      "createdBy": "sachin",
+      "id": 6
+    }
+  ],
+  "users": [
+    {
+      "userId": "ajaya",
+      "userName": "Ajaya Sharma",
+      "role": "super",
+      "password": "1234"
+    },
+    {
+      "userId": "sachin",
+      "userName": "Sachin Modi",
+      "role": "admin",
+      "password": "1234"
+    }
+  ],
+  "notifications": [
+    {
+      "id": 1,
+      "from": "ajaya",
+      "to": "sachin",
+      "message": "Demo message 1",
+      "date": "12/10/2020 11.40 AM"
+    },
+    {
+      "id": 2,
+      "from": "ajaya",
+      "to": "sachin",
+      "message": "Demo message 2",
+      "date": "12/10/2020 11.45 AM"
+    },
+    {
+      "id": 3,
+      "from": "sachin",
+      "to": "ajaya",
+      "message": "having issue in updating project demo",
+      "date": "12/10/2020 11.40 AM"
+    },
+    {
+      "id": 4,
+      "from": "sachin",
+      "to": "ajaya",
+      "message": "Project demo updated.",
+      "date": "12/10/2020 11.45 AM"
+    },
+    {
+      "message": "Good evening, What is the status of Demo project",
+      "to": "sachin",
+      "from": "ajaya",
+      "date": "12/10/2020 5.45 pm",
+      "id": 5
+    },
+    {
+      "message": "hello",
+      "to": "ajaya",
+      "from": "sachin",
+      "date": "12/11/2020 7.00 pm",
+      "id": 6
+    }
+  ]
+}

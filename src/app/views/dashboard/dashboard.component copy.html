@@ -1,0 +1,135 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          Project stats
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="callout callout-info">
+                    <small class="text-muted">Project Count</small>
+                    <br>
+                    <strong class="h4">{{projectCount}}</strong>
+                  </div>
+                </div><!--/.col-->
+                <div class="col-sm-6">
+                  <div class="callout callout-danger">
+                    <small class="text-muted">Region 1 Count</small>
+                    <br>
+                    <strong class="h4">{{region1Count}}</strong>
+                  </div>
+                </div><!--/.col-->
+                
+                
+              </div><!--/.row-->
+              <hr class="mt-0">  
+            </div><!--/.col-->
+            <div class="col-sm-6">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="callout callout-warning">
+                    <small class="text-muted">Region 2 count</small>
+                    <br>
+                    <strong class="h4">{{region2Count}}</strong>
+                  </div>
+                </div><!--/.col-->
+                
+              </div><!--/.row-->
+              <hr class="mt-0">
+              </div><!--/.col-->
+          </div><!--/.row-->
+          <br>
+          <div class="progress-group mb-5">
+            <div class="progress-group-header">
+              
+              <div>Draft</div>
+              <div class="ml-auto font-weight-bold mr-2">{{statusDraft}}</div>
+              <div class="text-muted small">({{((statusDraft/projectCount)*100).toFixed(2)}}%)</div>
+            </div>
+            <div class="progress-group-bars">
+              <div class="progress progress-xs">
+                <div class="progress-bar bg-warning" role="progressbar" [style.width.%]= "(statusDraft/projectCount)*100" [attr.aria-valuenow]="(statusDraft/projectCount)*100" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+          </div>
+          <div class="progress-group">
+            <div class="progress-group-header align-items-end">
+              
+              <div>In Progress</div>
+              <div class="ml-auto font-weight-bold mr-2">{{statusInProgress}}</div>
+              <div class="text-muted small">({{((statusInProgress/projectCount)*100).toFixed(2)}}%)</div>
+            </div>
+            <div class="progress-group-bars">
+              <div class="progress progress-xs">
+                <div class="progress-bar bg-info" role="progressbar" [style.width.%]= "(statusInProgress/projectCount)*100" [attr.aria-valuenow]="(statusInProgress/projectCount)*100" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+          </div>
+          <div class="progress-group">
+            <div class="progress-group-header align-items-end">
+              
+              <div>Completed</div>
+              <div class="ml-auto font-weight-bold mr-2">{{statusCompleted}}</div>
+              <div class="text-muted small">({{((statusCompleted/projectCount)*100).toFixed(2)}}%)</div>
+            </div>
+            <div class="progress-group-bars">
+              <div class="progress progress-xs">
+                <div class="progress-bar bg-success" role="progressbar" [style.width.%]= "(statusCompleted/projectCount)*100" [attr.aria-valuenow]="(statusCompleted/projectCount)*100" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!--/.col-->
+  </div><!--/.row-->
+  <div class="col-md-12">
+    <div class="card-columns cols-2">
+      <div class="card">
+        <div class="card-header">
+          Region1 Status Chart
+          <!-- <div class="card-header-actions">
+            <a href="http://www.chartjs.org">
+              <small class="text-muted">docs</small>
+            </a>
+          </div> -->
+        </div>
+        <div class="card-body">
+          <div class="chart-wrapper">
+            <canvas baseChart class="chart"
+            [data]="pieChartDataRegion1"
+            [labels]="pieChartLabels"
+            [chartType]="pieChartType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"></canvas>
+          </div>
+        </div>
+      </div> 
+      
+    <div class="card">
+        <div class="card-header">
+          Region2 Status Chart
+          <!-- <div class="card-header-actions">
+            <a href="http://www.chartjs.org">
+              <small class="text-muted">docs</small>
+            </a>
+          </div> -->
+        </div>
+        <div class="card-body">
+          <div class="chart-wrapper">
+            <canvas baseChart class="chart"
+            [data]="pieChartDataRegion2"
+            [labels]="pieChartLabels"
+            [chartType]="pieChartType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"></canvas>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>

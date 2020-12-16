@@ -1,0 +1,54 @@
+<div class="animated fadeIn">
+  
+  
+  <div class="row">
+    <div class="col-md-6">
+      
+      <div class="callout callout-success" *ngIf="(success && message.length >0)">
+        <small class="text-muted">{{message}}</small>
+        <br>
+        
+      </div>
+      <form #myform="ngForm" (ngSubmit)="createNotification(myform.value)">
+          
+      <div class="card">
+        
+        <div class="card-header">
+          <strong>Notification Form</strong> 
+        </div>
+        <div class="card-body">
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label">Message</label>
+              <div class="col-md-9">
+                <textarea id="message" name="message" class="form-control" placeholder="Enter message" [(ngModel)]="notification.message" #message="ngModel"></textarea>
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label" for="to">To</label>
+              <div class="col-md-9">
+                
+                <select id="to" name="to" class="form-control"  [(ngModel)]="notification.to" #to="ngModel">
+                  <option *ngFor="let user of userArr"  [value]="user.userId">{{user.userId}}</option>
+                 </select>
+              </div>
+            </div>
+            
+            
+        </div>
+        <div class="card-footer">
+          <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
+          <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+        </div>
+      </div>
+    </form>
+      
+    </div>
+    
+  </div><!--/.row-->
+  
+  
+  
+  
+  <!--/.row-->
+</div>

@@ -1,0 +1,113 @@
+<div class="animated fadeIn">
+  
+  
+  <div class="row">
+    <div class="col-md-6">
+      
+      <div class="callout callout-success" *ngIf="(success && message.length >0)">
+        <small class="text-muted">{{message}}</small>
+        <br>
+        
+      </div>
+      <form #myform="ngForm" (ngSubmit)="createProject(myform.value)">
+          
+      <div class="card">
+        
+        <div class="card-header">
+          <strong>project Creation Form</strong> 
+        </div>
+        <div class="card-body">
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label">Project Name</label>
+              <div class="col-md-9">
+                <input type="text" id="projectName" name="projectName" class="form-control" placeholder="Enter Project Name" [(ngModel)]="project.projectName" #projectName="ngModel">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label" for="startDate">Start Date</label>
+              <div class="col-md-9">
+                <input class="form-control" id="startDate" type="date" name="startDate" placeholder="start date" [(ngModel)]="project.startDate" #startDate="ngModel">
+                
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label" for="timeLine">TimeLine</label>
+              <div class="col-md-9">
+                <input type="text" id="timeLine" name="timeLine" class="form-control" placeholder="Enter project duration" 
+                [(ngModel)]="project.timeLine" #timeLine="ngModel">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label" for="cost">Cost</label>
+              <div class="col-md-9">
+                <input type="text" id="cost" name="cost" class="form-control" placeholder="Enter project cost"
+                [(ngModel)]="project.cost" #cost="ngModel">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label" for="geo">Geography</label>
+              <div class="col-md-9">
+                <select id="geo" name="geo" class="form-control"  [(ngModel)]="project.geo" #geo="ngModel">
+                  <option value="0">Please select</option>
+                  <option value="Region 1 (Ajmer,Udyapur-Jaipur)">Region 1 (Ajmer,Udyapur-Jaipur)</option>
+                  <option value="Region 2 (Rest)">Region 2 (Rest)</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label" for="projIncharge">Project Incharge</label>
+              <div class="col-md-9">
+                <input type="text" id="projIncharge" name="projIncharge" class="form-control" placeholder="Enter project incharge name"
+                [(ngModel)]="project.projIncharge" #projIncharge="ngModel">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label" for="projInchargeEmail">Project Incharge Email</label>
+              <div class="col-md-9">
+                <input type="text" id="projInchargeEmail" name="projInchargeEmail" class="form-control" placeholder="Enter project incharge email"
+                [(ngModel)]="project.projInchargeEmail" #projInchargeEmail="ngModel">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label" for="auditIncharge">Audit Incharge</label>
+              <div class="col-md-9">
+                <input type="text" id="auditIncharge" name="auditIncharge" class="form-control" placeholder="Enter audit incharge name"
+                [(ngModel)]="project.auditIncharge" #auditIncharge="ngModel">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label" for="auditInchargeEmail">Audit Incharge Email</label>
+              <div class="col-md-9">
+                <input type="text" id="auditInchargeEmail" name="auditInchargeEmail" class="form-control" placeholder="Enter audit incharge email"
+                [(ngModel)]="project.auditInchargeEmail" #auditInchargeEmail="ngModel">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-md-3 col-form-label" for="status">Status</label>
+              <div class="col-md-9">
+                <select id="status" name="status" class="form-control"  [(ngModel)]="project.status" #status="ngModel">
+                  <option value="draft">draft</option>
+                  <option value="In progress">In progress</option>
+                  <option value="Completed">Completed</option>
+                </select>
+              </div>
+            </div>
+            
+         
+        </div>
+        <div class="card-footer">
+          <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
+          <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+        </div>
+      </div>
+    </form>
+      
+    </div>
+    
+  </div><!--/.row-->
+  
+  
+  
+  
+  <!--/.row-->
+</div>

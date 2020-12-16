@@ -1,0 +1,88 @@
+<app-header
+  [navbarBrandRouterLink]="['/dashboard']"
+  [fixed]="true"
+  [navbarBrandFull]="{src: 'assets/img/brand/logo_full.jpg', height: 50, alt: 'Demo App'}"
+  [navbarBrandMinimized]="{src: 'assets/img/brand/logo.jpg', width: 40, height: 40, alt: 'Demo App'}"
+  [sidebarToggler]="'lg'"
+  [asideMenuToggler]="''"
+  [mobileAsideMenuToggler]="''"
+  >
+  
+  <ul class="nav navbar-nav ml-auto">
+    <li class="nav-item dropdown" dropdown placement="bottom right">
+      <a class="nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" data-toggle="modal" (click)="largeModal.show()"><i class="icon-bell fa-2x"></i><span class="badge badge-pill badge-danger">{{messageCount}}</span></a>
+    </li>
+    
+    <li class="nav-item dropdown" dropdown placement="bottom right">
+      <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" dropdownToggle (click)="false">
+        
+        <span class="img-avatar"><i class="fa fa-user fa-2x"></i></span>
+      </a>
+      <div class="dropdown-menu dropdown-menu-right" *dropdownMenu aria-labelledby="simple-dropdown">
+        <div class="dropdown-header text-center"><strong>Account of {{username}}</strong></div>
+        <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile</a>
+        <a class="dropdown-item" href="#"><i class="fa fa-lock"></i> Logout</a>
+      </div>
+    </li>
+  </ul>
+</app-header>
+<div class="app-body">
+  <app-sidebar #appSidebar [fixed]="true" [display]="'lg'" [minimized]="sidebarMinimized" (minimizedChange)="toggleMinimize($event)">
+    <app-sidebar-nav [navItems]="navItems" [perfectScrollbar] [disabled]="appSidebar.minimized"></app-sidebar-nav>
+    <app-sidebar-minimizer></app-sidebar-minimizer>
+  </app-sidebar>
+  <!-- Main content -->
+  <main class="main">
+    <!-- Breadcrumb -->
+    <!-- breaking change 'cui-breadcrumb' -->
+     <cui-breadcrumb>
+      
+      <li class="breadcrumb-menu d-md-down-none">
+        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+        
+        </div>
+      </li>
+    </cui-breadcrumb> 
+    
+    <div class="container-fluid">
+      <router-outlet></router-outlet>
+    </div><!-- /.container-fluid -->
+  </main>
+  </div>
+<app-footer>
+  <span><a href="#">Project Management</a> &copy; 2020</span>
+  <span class="ml-auto">Powered by <a href="#">SG soft Team</a></span>
+</app-footer>
+<div bsModal #largeModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Notifications</h4>
+        <button type="button" class="close" (click)="largeModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="message" *ngFor="let notification of notificationArr">
+          <div class="py-3 mr-3 float-left">
+            <div class="avatar">
+              <span class="img-avatar"><i class="fa fa-user fa-2x"></i></span>
+              <span class="avatar-status badge-success"></span>
+            </div>
+          </div>
+          <div>
+            <small class="text-muted">{{notification.from}}</small>
+            <small class="text-muted float-right mt-1">{{notification.date}}</small>
+          </div>
+          <div class="text-truncate font-weight-bold">{{notification.message}}</div>
+          <hr>
+        </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Clear All</button>
+        <button type="button" class="btn btn-secondary" (click)="largeModal.hide()">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
